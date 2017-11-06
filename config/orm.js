@@ -29,12 +29,12 @@ function objToSql(ob) {
   // Object for all our SQL statement functions.
 var orm = {
     all: function(tableInput, cb) {
-            var queryString = "SELECT * FROM " + tableInput + ";";
-            connection.query(queryString, function(err, result) {
-                if (err) {
-                    throw err;
-                }
-                cb(result);
+         var queryString = "SELECT * FROM " + tableInput + ";";
+         connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
             });
     },
     // vals = an array of values we want to save to cols - cols are the columns we want to insert the values into
