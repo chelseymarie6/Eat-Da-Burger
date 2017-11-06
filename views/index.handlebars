@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <img id="burger-img" class="img-responsive center-block" src="/assets/img/burger.png"/>
+        <h1 class="text-center">Eat Da Burger!</h1>
+        <h4 class="text-center">Please add a burger to the menu, devour one already on the menu or delete a burger off the menu.</h4>
+    </div>
+
+    <div class="row text-center">
+        <form method="POST" action="/burgers/create" class="form-inline">
+            <div class="form-group">
+                <input type="hidden" name="devoured" value="0"/>
+                <label class="sr-only" for="burger-input">Yummy Burger</label>
+                <input name="burger" type="text" class="form-control" id="burger-input" placeholder="Your order"/>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+    <hr>
+
+    <div class="row text-center">
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Your Burgers</div>
+                    <div id="burgers-added" class="panel-body">
+                    <hr>
+                    
+                    {{#each burgers}}
+                    {{#unless devoured}}
+
+                    <form method="POST" action="/burgers/update/{{id}}?_method=PUT" class="form-inline">
+                        <div class="form-group">
+                            <input type="hidden" name="devoured" value="1"/>
+                            <label class="sr-only">Yummy Burger</label>
+                            <p class="form-control-static">{{ burger_name }}</p>
+                        </div>
+                        <button id="burger-id{{id}}" type="submit" class="btn btn-default">Devour!</button>
+                    </form>
+                    
+                    {{/unless}}
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Devoured Burgers</div>
+                    <div id="burgers-devoured" class="panel-body">
+                    <hr>
+                    
+                    {{#each burgers}}
+                    {{#if devoured}}
+
+                    <form method="POST" action="/burgers/delete/{{id}}?_method=DELETE" class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only">Devoured Burgers</label>
+                            <p class="form-control-static">{{ burger_name }}</p>
+                        </div>
+                        <button id="burger-id{{id}}" type="submit" class="btn btn-default">Throw away!</button>
+                    </form>
+                    
+                    {{/if}}
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+    
+    </div>{{!--closes row div --}}
+
+</div>{{!--closes container div --}}
