@@ -1,2 +1,4 @@
 # Eat-Da-Burger
 A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!)
+
+![Screenshot](/public/assets/img/eat.PNG)
