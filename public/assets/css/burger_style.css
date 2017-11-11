@@ -1,3 +1,29 @@
 body {
     font-family: 'Indie Flower', cursive;
+    background: url("../img/burger-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-sizing: border-box;
+    font-size: 1.75em;
+    font-weight: bold;
 }
+
+#burger-img {
+    height: 25%;
+    width: 25%;
+}
+
+.jumbotron {
+    background-color: rgb(240, 225, 140);
+	opacity: 0.75;
+}
+
+.panel {
+    background-color: rgb(230, 107, 107);
+	opacity: 0.75;
+}
+
+
+
