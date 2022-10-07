@@ -1,6 +1,6 @@
 # Eat-Da-Burger
 A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!)
-![Eat-Da-Burger}(https://chelseymarie6.github.io/Eat-Da-Burger/)
+[Eat-Da-Burger}(https://chelseymarie6.github.io/Eat-Da-Burger/)
 
 ![Screenshot](/public/assets/img/eat.PNG)
 
